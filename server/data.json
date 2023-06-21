@@ -1,0 +1,97 @@
+{
+  "products": [
+    {
+      "productName": "Kids Jacket Jeans ",
+      "image": "https://img.freepik.com/free-photo/full-length-portrait-cute-little-kid-boy-stylish-jeans-clothes-smiling-standing-white-kids-fashion-concept_155003-20308.jpg?w=996&t=st=1685480125~exp=1685480725~hmac=e982c8e05f875384d0a28f82f636b9bbda0765a0b94534b95e67fe8f0a74bd9e",
+      "price": 250,
+      "pquantity": 5,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "image": "https://img.freepik.com/free-photo/fashion-portrait-young-elegant-woman_1328-2686.jpg?w=996&t=st=1685480116~exp=1685480716~hmac=2f53b246894074647b6c1a9d1542c6953fc76d9ab66cf212d1c952e90733eed5",
+      "productName": "Beige Blazer",
+      "price": 400,
+      "pquantity": 20
+    },
+    {
+      "productName": "Oversized linen shirt",
+      "image": "https://eg.hm.com/assets/styles/HNM/16028408/b4b7b7a9643a38b0c109e5edd496c1d14a78bb1a/1/image-thumb__4593430__product_listing/b4b7b7a9643a38b0c109e5edd496c1d14a78bb1a.jpg",
+      "price": 720,
+      "pquantity": 12,
+      "id": 3
+    },
+    {
+      "id": 4,
+      "image": "https://eg.hm.com/assets/styles/HNM/15436269/9b72a3dcba17c6333087f8be0342395e4222b571/1/image-thumb__4488249__product_listing/9b72a3dcba17c6333087f8be0342395e4222b571.jpg",
+      "productName": "Flared Low Jeans",
+      "price": 660,
+      "pquantity": 1
+    },
+    {
+      "id": 5,
+      "image": "https://eg.hm.com/assets/styles/HNM/14527263/05f84a5b9fd79ff0cdb9a749c92012ff066cf434/1/image-thumb__3511548__product_listing/05f84a5b9fd79ff0cdb9a749c92012ff066cf434.jpg",
+      "productName": "Slim High Ankle Jeans",
+      "price": 860,
+      "pquantity": 15
+    },
+    {
+      "id": 6,
+      "image": "https://eg.hm.com/assets/styles/HNM/15411414/8ad2a5f6f4156c62027bef885c6db09ac61b6d74/1/image-thumb__4452543__product_listing/8ad2a5f6f4156c62027bef885c6db09ac61b6d74.jpg",
+      "productName": "Slim Regular Jeans",
+      "price": 670,
+      "pquantity": 13
+    },
+    {
+      "productName": "Kids Jeans ",
+      "image": "https://eg.hm.com/assets/styles/HNM/16450162/0b24d50461f09c205de8dc63126de9fc75600066/1/image-thumb__4776645__product_listing/0b24d50461f09c205de8dc63126de9fc75600066.jpg",
+      "price": 234,
+      "pquantity": 12,
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Aya_bassel",
+      "email": "ayabassell@gmail.com",
+      "password": "123456",
+      "client_admin": "administrator"
+    },
+    {
+      "id": 2,
+      "username": "mohammed_amr",
+      "email": "mohammedamr@gmail.com",
+      "password": "123456",
+      "client_admin": "administrator"
+    },
+    {
+      "username": "noha",
+      "email": "noha@gmail.com",
+      "password": "123456",
+      "client_admin": "client",
+      "id": 3
+    },
+    {
+      "username": "Yassmeen",
+      "email": "yasmeen@gmail.com",
+      "password": "AYAbassel123**",
+      "client_admin": "client",
+      "id": 4
+    },
+    {
+      "username": "Nour",
+      "email": "nour@gmail.com",
+      "password": "#Nour123",
+      "client_admin": "administrator",
+      "id": 5
+    },
+    {
+      "username": "Nourallah",
+      "email": "no@gmail.com",
+      "password": "#Nour123",
+      "client_admin": "client",
+      "id": 6
+    }
+  ]
+}

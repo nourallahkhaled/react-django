@@ -1,0 +1,36 @@
+ul,
+.teams-block .image .overlay,
+.contact-block .contact-info ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#contact {
+    background-color: #FFF1DC !important;
+}
+.container-fluid {
+    margin: 0 auto;
+    max-width: 1500px;
+}
+textarea {
+    height: 150px !important;
+    min-height: 150px !important;
+    resize: vertical;
+    padding: 10px 15px !important;
+}
+
+.title-holder {
+    text-align: center;
+    margin: 0 0 40px;
+}
+
+.title-holder h2 {
+    /* margin: 0 0 5px; */
+    text-transform: uppercase;
+}
+
+
+
+
+
+

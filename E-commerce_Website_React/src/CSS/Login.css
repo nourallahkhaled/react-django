@@ -1,0 +1,31 @@
+:root {
+    --first-color: #3A98B9;
+    --second-color: #FFF1DC;
+    --third-color: #E8D5C4;
+    --fourth-color: #EEEEEE;
+}
+body{
+    background-color: var(--second-color) !important;
+}
+.loginTitle{
+    color: var(--first-color) !important;
+}
+.my-button {
+    background-color: var(--first-color) !important;
+    color: var(--second-color) !important;
+    border: none !important;
+    font-weight: bold !important;
+}
+
+.my-button:hover {
+        background-color: var(--second-color) !important;
+        color: var(--first-color) !important;
+        border: 2px solid #3A98B9 !important;
+        font-weight: bold !important;
+
+}
+
+.paddingLogin{
+    padding-top: 100px !important;
+    padding-bottom: 50px !important;
+}
