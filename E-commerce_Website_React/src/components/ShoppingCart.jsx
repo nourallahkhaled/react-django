@@ -9,7 +9,7 @@ const ShoppingCart = ({ isOpen }) => {
 
     useEffect(() => {
         const fetchStoreItems = async () => {
-        const response = await fetch("http://localhost:3005/products");
+        const response = await fetch("http://localhost:8000/api/allproducts");
         const data = await response.json();
         setStoreItems(data);
         };
@@ -31,7 +31,7 @@ const ShoppingCart = ({ isOpen }) => {
                 Total{" "}
                 {cartItems.reduce((total, cartItem) => {
                     const item = storeItems.find((i) => i.id === cartItem.id);
-                                        return total + (item?.price || 0) * cartItem.quantity;
+                                        return total + (item?.productPrice || 0) * cartItem.quantity;
                                     }, 0)
                 }
             </div>

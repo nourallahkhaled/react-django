@@ -7,7 +7,7 @@ const Store = () => {
 
     useEffect(() => {
         const fetchStoreItems = async () => {
-        const response = await fetch("http://localhost:3005/products");
+        const response = await fetch("http://localhost:8000/api/allproducts");
         const data = await response.json();
         setStoreItems(data);
         };
@@ -17,14 +17,21 @@ const Store = () => {
 
     return (
         <div className="bg-store pt-5">
-        <h1 className="p-4 mt-3 text-center store-title">New Collection</h1>
-        <Row md={2} xs={1} lg={3} className="g-4">
-            {storeItems.map((item) => (
-            <Col key={item.id}>
-                <StoreItem {...item} />
-            </Col>
-            ))}
-        </Row>
+            <h1 className="p-4 mt-3 text-center store-title">New Collection</h1>
+            <Row xs={1} md={2} lg={3} className="g-4">
+                {storeItems.map((product) => (
+                <Col key={product.id}>
+                    <StoreItem
+                        id={product.id}
+                        productName={product.productName}
+                        productDescription={product.productDescription}
+                        productPrice={product.productPrice}
+                        productQuantity={product.productQuantity}
+                        image={product.image}
+                    />
+                </Col>
+                ))}
+            </Row>
         </div>
     );
 };

@@ -24,8 +24,7 @@ export function MyNav(props) {
                             <NavLink style={{ color: '#EEEEEE' }}  className="nav-link" to="/">Home</NavLink>
                             <NavLink style={{ color: '#EEEEEE' }} className="nav-link" to="/about">About</NavLink>
                             <NavLink style={{ color: '#EEEEEE' }} className="nav-link" to="/store">Products</NavLink>
-                            {/* <NavLink style={{ color: '#EEEEEE' }} className="nav-link" to="/store" >
-                            </NavLink> */}
+                            <NavLink style={{ color: '#EEEEEE' }} className="nav-link" to="/customer/1" >My Account</NavLink>
                         </Nav>
     
                         {props.changable.data === "Login" ? (

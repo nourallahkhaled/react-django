@@ -15,7 +15,7 @@ const StoreItem = ({ id }) => {
 
     React.useEffect(() => {
         const fetchItem = async () => {
-        const response = await fetch(`http://localhost:3005/products/${id}`);
+        const response = await fetch(`http://localhost:8000/api/product/${id}`);
         const data = await response.json();
         setItem(data);
         setLoading(false);
@@ -28,13 +28,13 @@ const StoreItem = ({ id }) => {
         return <div>Loading...</div>;
     }
 
-    const { productName, price, image, pquantity } = item;
+    const { productName, productPrice, productDescription, productQuantity } = item;
     const quantity = getItemQuantity(id);
 
     let buttonText, label;
-    if (pquantity === 0) {
+    if (productQuantity === 0) {
         buttonText = 'Sold Out';
-    }else if (pquantity === 1) {
+    }else if (productQuantity === 1) {
         buttonText = 'Add To Cart';
         label = 'Hurry Up! Last Piece';
     } else {
@@ -49,22 +49,22 @@ const StoreItem = ({ id }) => {
 return (
     <Container className="mx-5 mb-5 bg-store">
         <Card style={{ width: '19rem' }}>
-        <Card.Img
+        {/* <Card.Img
             variant="top"
             src= {image}
             style={{ height: "480px", objectFit: "contain" }}
-        />
+        /> */}
         <Card.Body className="d-flex flex-column bg-card">
             <Card.Title style={{ color: '#967E76', fontWeight: "bold" }}>{productName}</Card.Title>
             <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
-                <span style={{ fontWeight: "bold" }} className="ms-2 text-center text-muted">{price} EGP</span>
+                <span style={{ fontWeight: "bold" }} className="ms-2 text-center text-muted">{productPrice} EGP</span>
             </Card.Title>
-            <Card.Text style={{ color: '#3A98B9', fontWeight: "bold" }}>Quantity: {pquantity} Pieces</Card.Text>
+            <Card.Text style={{ color: '#3A98B9', fontWeight: "bold" }}>Quantity: {productQuantity} Pieces</Card.Text>
             <div className="mt-auto text-center">
             {label && <span style={{ color: '#967E76', fontWeight: "bold" }}>{label}</span>}
             <br />
             {quantity === 0 ? (
-                <Button className="w-95" style={{ backgroundColor: '#3A98B9' }} disabled={pquantity === 0} onClick={() => handleClick()}>
+                <Button className="w-95" style={{ backgroundColor: '#3A98B9' }} disabled={productQuantity === 0} onClick={() => handleClick()}>
                 {buttonText}
                 </Button>
             ) : (
@@ -100,5 +100,3 @@ return (
 };
 
 export default StoreItem;
-
-

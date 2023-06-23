@@ -8,21 +8,23 @@ import { Products } from './components/Products';
 import { ProductForm } from './components/ProductForm';
 import { NotFound } from './components/NotFound';
 import Login from './components/Login';
-import Register from './components/Register';
+import { Register } from './components/Register';
 import { useState } from 'react';
 import Store from './components/Store';
 import ShoppingCartProvider from "./context/ShoppingCartContext";
 import { Footer } from './components/Footer';
-import { Employee } from './components/Employee';
+// import { Employee } from './components/Employee';
+import User from './components/User';
+
 
 function App() {
   let [isLoggedIn, setIsLoggedIn] = useState(false);
-  let [Username, setUsername] = useState("");
-  let [userCategory, setUserCategory] = useState("");
-  let handelLogin = (user, LoggedIn) => {
+  // let [Username, setUsername] = useState("");
+  // let [userCategory, setUserCategory] = useState("");
+  let handelLogin = (LoggedIn) => {
     setIsLoggedIn(LoggedIn);
-    setUsername(user.username);
-    setUserCategory(user.client_admin)
+    // setUsername(user.username);
+    // setUserCategory(user.client_admin)
   }
   let handelLogout = (LoggedIn) => {
     localStorage.removeItem("shopping-cart")
@@ -33,7 +35,7 @@ function App() {
     data: " ",
     handler: handelLogout
   }
-  isLoggedIn ? logInOut.data = `Welcome, ${Username}` : logInOut.data = "Login";
+  isLoggedIn ? logInOut.data = `Welcome, Hamada` : logInOut.data = "Login";
 
 
   return (
@@ -43,19 +45,22 @@ function App() {
         isLoggedIn ?  <MyNav changable={logInOut} /> : <MyNav changable={logInOut} />
       }
         <Routes>
-          <Route path='' element={<Employee/> } />
+          <Route path='' element={<Home/> } />
+          <Route path="customer/:id" element={<User />} />
           <Route path='home' element={<Home />} />
           <Route path='about' element={<About />} />
           <Route path='products/:id/edit' element={<ProductForm />} />
-          <Route path='login' element={<Login onLogin={handelLogin} />} />
+          <Route path='login' element={<Login onLogin={handelLogin}/>} />
           <Route path='register' element={<Register />} />
-          {
+          <Route path='store' element={<Store />} />
+          {/* {
           isLoggedIn && userCategory === "administrator" ? 
           <Route path='store' element={<Products />} />
           : isLoggedIn && userCategory === "client" ?             
             <Route path='store' element={<Store />} /> 
             : <Route path='store' element={<Login onLogin={handelLogin} />} />
-          }
+          } */}
+          <Route path='register' element={<Register />} />
           <Route path='logout' element={<Home />} />
           <Route path='*' element={<NotFound />} />
         </Routes>

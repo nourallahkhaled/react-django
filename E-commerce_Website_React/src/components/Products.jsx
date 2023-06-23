@@ -8,16 +8,16 @@ export function Products() {
 
     let getAllProduct = async () => {
         try {
-            let response = await axios.get("http://localhost:3005/products");
+            let response = await axios.get("http://localhost:8000/api/allproducts");
             setProducts(response.data);
         } catch (error) {
             console.log(error);
         }
     };
 
-    let deleteProduct = async (productId) => {
+    let deleteProduct = async (id) => {
         try {
-            await axios.delete(`http://localhost:3005/products/${productId}`);
+            await axios.delete(`http://localhost:8000/api/product/${id}`);
             getAllProduct();
         } catch (error) {
             console.log(error);
@@ -41,10 +41,14 @@ export function Products() {
                         <tr>
                             <th>Id</th>
                             <th>Product Name</th>
-                            <th>Product Image</th>
+                            {/* <th>Product Image</th> */}
                             <th>Price</th>
                             <th>Quanitity</th>
+                            <th>Description</th>
                             <th>Actions</th>
+
+
+                            {/* <th>Actions</th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -53,9 +57,10 @@ export function Products() {
                                 <tr key={product.id}>
                                     <td>{product.id}</td>
                                     <td>{product.productName}</td>
-                                    <td><img src={product.image} style={{height:"150px"}}></img></td>
-                                    <td>{product.price}</td>
-                                    <td>{product.pquantity}</td>
+                                    {/* <td><img src={product.image} style={{height:"150px"}}></img></td> */}
+                                    <td>{product.productPrice}</td>
+                                    <td>{product.productQuantity}</td>
+                                    <td>{product.productDescription}</td>
                                     <td>
                                         <NavLink to={`/products/${product.id}/edit`}>
                                             <i className='fs-2 text-info mx-1 bi bi-pencil-square'></i>
@@ -72,6 +77,3 @@ export function Products() {
         </div>
     );
 }
-
-
- 

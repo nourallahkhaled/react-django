@@ -9,7 +9,7 @@ const CartItem = ({ id, quantity }) => {
 
     React.useEffect(() => {
         const fetchItem = async () => {
-        const response = await fetch(`http://localhost:3005/products/${id}`);
+        const response = await fetch(`http://localhost:8000/api/product/${id}`);
         const data = await response.json();
         setItem(data);
         setLoading(false);
@@ -22,15 +22,15 @@ const CartItem = ({ id, quantity }) => {
         return <div>Loading...</div>;
     }
 
-    const { productName, price, image } = item;
+    const { productName, productPrice } = item;
 
     return (
         <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
-            <img
+            {/* <img
             src={image}
             alt={`${productName}-img`}
             style={{ height:"200px", width: "125px", objectFit: "cover" }}
-            />
+            /> */}
             <div className="me-auto">
                 <div>
                     {productName}{" "}
@@ -41,10 +41,10 @@ const CartItem = ({ id, quantity }) => {
                     )}
                 </div>
                 <div className="text-muted" style={{ fontSize: "0.9rem" }}>
-                    {price}
+                    {productPrice}
                 </div>
             </div>
-            <div>{price * quantity}</div>
+            <div>{productPrice * quantity}</div>
             <Button
             variant="outline-danger"
             size="sm"
